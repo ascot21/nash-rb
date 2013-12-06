@@ -1,0 +1,19 @@
+development:
+  adapter: postgresql
+  database: nash-rb_development
+  username:
+  password:
+  host: localhost
+
+test:
+  adapter: postgresql
+  database: nash-rb_test
+  username:
+  password:
+  host: localhost
+
+production:
+  adapter: postgresql
+  database: nash-rb_production
+  username:
+  password:

@@ -7,6 +7,7 @@ gem 'activeadmin'
 gem 'bourbon'
 gem 'neat'
 gem 'chosen-rails'
+gem 'thin'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

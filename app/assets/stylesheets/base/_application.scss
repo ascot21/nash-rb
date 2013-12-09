@@ -56,28 +56,43 @@ header {
 
 .entry {
   margin-bottom: 3em;
-  @include span-columns(4);
+  padding: 0 1em;
+  @include span-columns(12);
+  @include omega();
+  @include media($tablet){
+    padding: 0;
+    @include span-columns(4);
+  }
   &:nth-of-type(3n+3) {
     @include omega();
   }
   img {
     max-width: 100%;
   }
-  .submitted-by {
+}
+
+.submitted-by {
+  color: $gray;
+  font-weight: bold;
+  margin-top: 0;
+  a {
     color: $gray;
-    font-weight: bold;
-    margin-top: 0;
-    a {
-      color: $gray;
-      float: right;
-      text-decoration: none;
-    }
+    float: right;
+    text-decoration: none;
   }
 }
 
+.page-title {
+  @include span-columns(6);
+}
+
 .new-entry {
-  @include span-columns(12);
+  @include span-columns(6);
   @include omega();
+  @include pad(2em 0);
+  .btn {
+    float: right;
+  }
 }
 
 .meetup-signin {

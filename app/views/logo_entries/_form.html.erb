@@ -2,11 +2,12 @@
   <p>Please upload an image file of your logo.  If you'd like, mockup the logo on a t-shirt with (<%= link_to "this template", "http://wegraphics.net/downloads/free-t-shirt-mockup-psd-files", :target => "_blank" %>).</p>
   <h3>Requirements</h3>
   <ul>
-    <li>The file must have the dimensions 600px X 600px.</li>
+    <li>The image should be a square (otherwise it'll be cropped).
+    <li>The file must have the dimensions of at least 600px X 600px.</li>
     <li>File size must not exceed 3 megabytes.</li>
   </ul>
   <fieldset>
-    <%= f.file_field :image %>
+    <%= f.file_field :image , :required => true %>
   </fieldset>
   <fieldset>
     <%= f.label "Comment (optional)" %>

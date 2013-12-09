@@ -4,3 +4,14 @@ button {
   border: none;
   padding: 0;
 }
+
+.btn {
+  background: $red;
+  color: $white;
+  font-weight: bold;
+  padding: .5em 1em;
+  text-decoration: none;
+  &:hover {
+    background: $red-dark;
+  }
+}

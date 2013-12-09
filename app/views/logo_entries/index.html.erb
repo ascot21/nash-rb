@@ -1,4 +1,9 @@
-<h1>Logo Design Entries</h1>
+<h1 class="page-title">Logo Design Entries</h1>
+<section class="new-entry">
+  <% if user_signed_in? %>
+    <%= link_to 'New Logo Design Entry', new_logo_entry_path, :class => "btn" %>
+  <% end %>
+</section>
 
 <% @logo_entries.each do |logo_entry| %>
   <div class="entry">
@@ -13,13 +18,7 @@
   </div>
   <div id="modal-<%= logo_entry.id %>" class="reveal-modal">
     <%= image_tag logo_entry.image.url %>
-    <p>Submitted by: <%= logo_entry.user.name %></p>
+    <p class="submitted-by">Submitted by: <%= logo_entry.user.name %></p>
     <a class="close-reveal-modal">&#215;</a>
   </div>
 <% end %>
-
-<section class="new-entry">
-  <% if user_signed_in? %>
-    <%= link_to 'New Logo entry', new_logo_entry_path %>
-  <% end %>
-</section>

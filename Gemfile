@@ -12,6 +12,7 @@ gem 'omniauth'
 gem 'omniauth-meetup'
 gem 'paperclip', "~> 3.0"
 gem 'paperclip-dropbox', ">= 1.1.7"
+gem 'rMeetup'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

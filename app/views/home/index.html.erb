@@ -1,4 +1,19 @@
-<h2>Welcome to the Nashville Ruby User Group!</h1>
-<% unless user_signed_in? %>
-  <%= link_to "Sign in using Meetup", user_omniauth_authorize_path(:meetup), :class => "meetup-signin" %>
-<% end %>
+<h2 class="site-intro">Nash.rb is THE only user group in Nashville dedicated to helping Rubyists learn and connect with other Rubyists.</h2>
+<p class="group-description"><%= @meetup.description %></p>
+
+<section class="next-event">
+  <h3><i class="fa fa-calendar"></i> Next Event</h3>
+  <% if @next_event['status'] == "upcoming" %>
+    <h3><%= link_to @next_event['name'], @next_event['event_url'] %></h3>
+    <%= strip_tags @next_event['description'] %>
+
+    <p><strong>Date:</strong> <%= @next_event['time'].to_datetime.strftime('%B %d, %l:%M %p %Y') %></p>
+    <p><strong>Location:</strong> <%= @next_event['venue_name'] %>, <%= @next_event['venue_address1'] %>, <%= @next_event['venue_city'] %>, <%= @next_event['venue_state'] %> <%= @next_event['venue_zip'] %> </p>
+  <% else %>
+    <h4>No upcoming events.</h4>
+  <% end %>
+</section>
+<section class="news">
+  <h3><i class="fa fa-calendar-o"></i> News</h3>
+  News section coming soon
+</section>

@@ -30,10 +30,26 @@ body {
   }
 }
 
-.header-primary {}
+.container {
+  @include outer-container;
+}
 
-.nav-primary {}
+header {
+  background: $red;
+  color: $white;
+  a {
+    color: $white;
+  }
+}
 
-.content-primary {}
+.logo {
+  @include span-columns(6);
+}
 
-.footer-primary {}
+.logged-in, .sign-up {
+  font-weight: bold;
+  margin: 2em 0;
+  text-align: right;
+  @include span-columns(6);
+  @include omega();
+}

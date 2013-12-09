@@ -5,16 +5,28 @@
 <!--[if IE 9]>    <html class="lt-ie10 no-js"> <![endif]-->
 <!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-  <title>Foo</title>
+  <title>Nashville Ruby User Group</title>
   <%= stylesheet_link_tag "screen", :media => "all" %>
   <%= csrf_meta_tags %>
   <%= javascript_include_tag :modernizr %>
   <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
 </head>
 <body>
+  <header>
+    <div class="container">
+      <h1 class="logo">Nash.rb</h1>
+      <%- if user_signed_in? %>
+        <span class="logged-in">Logged in as: <%= current_user.name %> | <%= link_to "Sign Out", destroy_user_session_path, method: :delete %></span>
+      <%- else -%>
+        <%= link_to "Sign in using Meetup", user_omniauth_authorize_path(:meetup), :class => "sign-up" %>
+      <%-end %>
+    </div>
+  </header>
 
   <%= render 'shared/flash' %>
-  <%= yield %>
+  <section class="container">
+    <%= yield %>
+  </section>
 
   <!--[if IE 8]>
     <%= javascript_include_tag 'ie8' %>

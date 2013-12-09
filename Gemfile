@@ -8,6 +8,8 @@ gem 'bourbon'
 gem 'neat'
 gem 'chosen-rails'
 gem 'thin'
+gem 'omniauth'
+gem 'omniauth-meetup'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -38,6 +40,7 @@ group :development, :test do
   gem "quiet_assets"
   gem "heroku"
   gem "rspec-rails"
+  gem 'dotenv-rails'
 end
 
 group :test do

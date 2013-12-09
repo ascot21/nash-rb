@@ -1,1 +1,20 @@
 /**** Library ****/
+.alerts {
+  @include outer-container();
+}
+.alert {
+  background: $green;
+  color: $white;
+  display: block;
+  font-size: 1.25em;
+  margin: 1em 0;
+  padding: 1em;
+  width: 100%;
+  .close {
+    color: $white;
+    float: right;
+    font-size: 1.5em;
+    text-decoration: none;
+    line-height: 100%;
+  }
+}

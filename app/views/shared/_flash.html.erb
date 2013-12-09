@@ -1,6 +1,8 @@
-<% flash().each do |key, msg| %>
-  <div class="alert alert-<%= key %> fade in">
-    <%= link_to '&times;'.html_safe, '#', :class => 'close', 'data-dismiss' => 'alert' %>
-    <%= msg %>
-  </div>
-<% end %>
+<section class="alerts">
+  <% flash().each do |key, msg| %>
+    <div class="alert alert-<%= key %> fade in">
+      <%= msg %>
+      <%= link_to '&times;'.html_safe, '#', :class => 'close'%>
+    </div>
+  <% end %>
+</section>

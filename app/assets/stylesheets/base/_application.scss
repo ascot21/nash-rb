@@ -34,6 +34,10 @@ body {
   @include outer-container;
 }
 
+#main-content {
+  min-height: 800px;
+}
+
 header {
   background: $red;
   color: $white;
@@ -42,8 +46,18 @@ header {
   }
 }
 
+footer {
+  background: $gray-lighter;
+  color: $gray-light;
+  padding: 1em 0;
+  text-align: center;
+}
+
 .logo {
   @include span-columns(6);
+  a {
+    text-decoration: none;
+  }
 }
 
 .logged-in, .sign-up {

@@ -14,7 +14,7 @@
 <body>
   <header>
     <div class="container">
-      <h1 class="logo">Nash.rb</h1>
+      <h1 class="logo"><%= link_to "Nash.rb", :root %></h1>
       <%- if user_signed_in? %>
         <span class="logged-in">Logged in as: <%= current_user.name %> | <%= link_to "Sign Out", destroy_user_session_path, method: :delete %></span>
       <%- else -%>
@@ -24,9 +24,15 @@
   </header>
 
   <%= render 'shared/flash' %>
-  <section class="container">
+  <section class="container" id="main-content">
     <%= yield %>
   </section>
+  <footer>
+    <div class="container">
+      <h4>The Nashville Ruby Meetup Group</h4>
+      <p>Site by Adam Scott</p>
+    </div>
+  </footer>
 
   <!--[if IE 8]>
     <%= javascript_include_tag 'ie8' %>

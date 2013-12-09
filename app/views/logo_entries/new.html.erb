@@ -1,0 +1,7 @@
+<h1>New Logo Design Entry</h1>
+
+<% if Date.today < Date.new(2013,12,23) %>  <!-- Deadline for submissions is Dec 23, 2013 -->
+  <%= render 'form' %>
+<% else %>
+  <p>The deadline for submissions has passed.</p>
+<% end %>

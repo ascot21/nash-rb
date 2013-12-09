@@ -1,0 +1,15 @@
+<h2>Logo Design Contest</h1>
+<p>The Nashville Ruby on Rails Meetup group is re-branding itself to become Nash.rb.  Along with this we’d like to create some branding to go along with the new group name.  We are holding a design contest for the new logo. We’ll be taking submissions from anyone that wants to enter and will allow everyone to vote on the new logo.  The winner will get a free t-shirt when they are printed, recognition on this website and the admiration of their peers!</p>
+
+<p>If you’d like to enter, please follow these instructions:</p>
+<ol>
+  <li>Design logo.</li>
+  <li>Mockup a tshirt design of the logo with (<%= link_to "this template", "http://wegraphics.net/downloads/free-t-shirt-mockup-psd-files", :target => "_blank" %>).  Save as jpg.</li>
+  <li><%= link_to "Sign into this site with your Meetup account.", user_omniauth_authorize_path(:meetup) %></li>
+  <li><%= link_to "Submit your entry", new_logo_entry_path() %></li>
+
+</ol>
+
+<p><strong>The deadline for submission is December 22nd, 2013.</strong></p>
+
+<p>We’ll then send out a poll with all of the entries and give everyone a week to vote.  The winner will be revealed at the next meetup on January 2nd at Emma.</p>

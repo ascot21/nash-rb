@@ -1,4 +1,4 @@
 <h2>Welcome to the Nashville Ruby User Group!</h1>
 <% unless user_signed_in? %>
-  <%= link_to "Sign in using Meetup", user_omniauth_authorize_path(:meetup) %>
+  <%= link_to "Sign in using Meetup", user_omniauth_authorize_path(:meetup), :class => "meetup-signin" %>
 <% end %>

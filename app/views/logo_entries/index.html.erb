@@ -1,0 +1,25 @@
+<h1>Logo Design Entries</h1>
+
+<% @logo_entries.each do |logo_entry| %>
+  <div class="entry">
+    <%= link_to image_tag(logo_entry.image.url(:medium)), "#", :data => { :'reveal-id' => 'modal-' + logo_entry.id.to_s } %>
+    <p class="submitted-by">Submitted by: <%= logo_entry.user.name %>
+    <% if user_signed_in? %>
+      <% if logo_entry.user.id == current_user.id %>
+        <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, logo_entry, method: :delete, data: { confirm: 'Are you sure you want to delete your logo entry?' } %>
+      <% end %>
+    <% end %>
+    </p>
+  </div>
+  <div id="modal-<%= logo_entry.id %>" class="reveal-modal">
+    <%= image_tag logo_entry.image.url %>
+    <p>Submitted by: <%= logo_entry.user.name %></p>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+<% end %>
+
+<section class="new-entry">
+  <% if user_signed_in? %>
+    <%= link_to 'New Logo entry', new_logo_entry_path %>
+  <% end %>
+</section>

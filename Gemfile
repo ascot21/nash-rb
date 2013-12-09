@@ -10,11 +10,14 @@ gem 'chosen-rails'
 gem 'thin'
 gem 'omniauth'
 gem 'omniauth-meetup'
+gem 'paperclip', "~> 3.0"
+gem 'paperclip-dropbox', ">= 1.1.7"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'font-awesome-sass'
 end
 
 group :production do

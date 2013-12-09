@@ -14,6 +14,7 @@
 #= require jquery_ujs
 #= require_tree .
 #= require chosen-jquery
+#= require jquery.reveal
 $ ->
   $('.close').click (e) ->
     e.preventDefault()

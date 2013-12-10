@@ -10,7 +10,7 @@ class LogoEntriesController < InheritedResources::Base
     @logo_entry.user_id = current_user.id
     if @logo_entry.save
       flash[:notice] = "Your logo design has been submitted."
-      redirect_to :logo_entries
+      redirect_to "/logo-contest/entries"
     else
       flash[:error] = "Your logo design submission couldn't be saved. #{@logo_entry.errors.full_messages.join}"
       render :new

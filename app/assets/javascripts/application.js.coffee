@@ -19,3 +19,12 @@ $ ->
   $('.close').click (e) ->
     e.preventDefault()
     $(e.target).parent(".alert").fadeOut()
+
+  $('a.entry_modal').click (e) ->
+    e.preventDefault()
+    url = $(e.target).closest("a").data "url"
+    user_name = $(e.target).closest("a").data "user-name"
+    debugger
+    $('.reveal-modal img').attr "src", url
+    $('.reveal-modal .submitted-by').html "Submitted by: " + user_name
+    $('.reveal-modal').reveal()

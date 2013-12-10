@@ -9,5 +9,6 @@ NashRb::Application.routes.draw do
   match '/422' => 'errors#unprocessable_entity'
   match '/500' => 'errors#application_error'
   match '/logo-contest' => 'home#logo_contest'
+  match '/logo-contest/entries' => "logo_entries#index"
   root :to => 'home#index'
 end

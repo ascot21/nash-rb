@@ -5,20 +5,23 @@
   <% end %>
 </section>
 
-<% @logo_entries.each do |logo_entry| %>
-  <div class="entry">
-    <%= link_to image_tag(logo_entry.image.url(:medium)), "#", :data => { :'reveal-id' => 'modal-' + logo_entry.id.to_s } %>
-    <p class="submitted-by">Submitted by: <%= logo_entry.user.name %>
-    <% if user_signed_in? %>
-      <% if logo_entry.user.id == current_user.id %>
-        <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, logo_entry, method: :delete, data: { confirm: 'Are you sure you want to delete your logo entry?' } %>
+<section id="entries">
+  <% @logo_entries.each do |logo_entry| %>
+    <div class="entry">
+      <%= link_to image_tag(logo_entry.image.url(:medium)), "#", :data => { :url => logo_entry.image.url, :user_name => logo_entry.user.name  }, :class => "entry_modal" %>
+      <p class="submitted-by">Submitted by: <%= logo_entry.user.name %>
+      <% if user_signed_in? %>
+        <% if logo_entry.user.id == current_user.id %>
+          <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, logo_entry, method: :delete, data: { confirm: 'Are you sure you want to delete your logo entry?' } %>
+        <% end %>
       <% end %>
-    <% end %>
-    </p>
-  </div>
-  <div id="modal-<%= logo_entry.id %>" class="reveal-modal">
-    <%= image_tag logo_entry.image.url %>
-    <p class="submitted-by">Submitted by: <%= logo_entry.user.name %></p>
-    <a class="close-reveal-modal">&#215;</a>
-  </div>
-<% end %>
+      </p>
+    </div>
+  <% end %>
+</section>
+
+<div class="reveal-modal">
+  <img src="">
+  <p class="submitted-by"></p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>

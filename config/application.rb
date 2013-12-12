@@ -62,5 +62,12 @@ module NashRb
     config.assets.version = '1.0'
 
     config.assets.initialize_on_precompile = false
+
+    # Customize generators
+    config.generators do |g|
+      g.test_framework  false
+      g.stylesheets     false
+      g.javascripts     false
+    end
   end
 end

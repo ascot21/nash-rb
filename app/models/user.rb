@@ -4,9 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :rememberable, :registerable, :omniauthable, :omniauth_providers => [:meetup]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :password, :password_confirmation, :remember_me, :provider, :uid, :name
+  attr_accessible :password, :password_confirmation, :remember_me, :provider, :uid, :name, :email
 
   has_many :logo_entries, :dependent => :destroy
+
+  validates_presence_of :email
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|

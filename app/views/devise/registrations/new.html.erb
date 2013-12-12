@@ -1,3 +1,19 @@
-<h2>Sign up</h2>
 
-<%= link_to "Sign in using Meetup", user_omniauth_authorize_path(:meetup), :class => "meetup-signin" %>
+
+<% if session["devise.user_attributes"].present? %>
+  <h2>Finish Registration</h2>
+  <%= form_for @user, url: user_registration_path do |f| -%>
+    <div class='form-group'>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
+    <button class='btn'>Finish Registration</button>
+  <% end -%>
+<% else %>
+  <h2>Sign up</h2>
+  <%= link_to "Sign in using Meetup", user_omniauth_authorize_path(:meetup), :class => "meetup-signin" %>
+<% end %>
+
+
+
+

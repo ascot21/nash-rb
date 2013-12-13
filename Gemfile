@@ -7,7 +7,6 @@ gem 'activeadmin'
 gem 'bourbon'
 gem 'neat'
 gem 'chosen-rails'
-gem 'thin'
 gem 'omniauth'
 gem 'omniauth-meetup'
 gem 'paperclip', "~> 3.0"
@@ -23,6 +22,7 @@ end
 
 group :production do
   gem "heroku_rails_deflate"
+  gem "passenger"
 end
 
 group :development do
@@ -37,6 +37,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'thin'
   gem 'factory_girl_rails'
   gem "pry-rails"
   gem "pry-nav"
